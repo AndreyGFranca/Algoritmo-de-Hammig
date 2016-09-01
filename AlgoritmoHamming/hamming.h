@@ -2,7 +2,7 @@
 #define HAMMING_H
 
 #include <vector>
-#include <stack>
+#include <queue>
 
 class Hamming
 {
@@ -34,12 +34,12 @@ public:
     }
 
     std::vector<int>    lista_Bits_Dados;
-    std::stack<int>     pilha_Bits_Paridade;
+    std::queue<int>     fila_Bits_Paridade;
 
     /* Métodos: */
     void printa_Mensagem();
     bool potencia_De_Dois(int num);
-    void insere_Bit_Paridade(int bit);
+    void insere_Bit_Paridade();
     void calcula_Bit_Errado(int bit);
 
     /*Getters*/

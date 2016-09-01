@@ -12,19 +12,41 @@ Hamming::Hamming()
 /**
  * @brief potencia_De_Dois
  * @param num
- * @return true - se o num for potencia de dois, false caso não seja
+ * @return true - se o num for potencia de dois, false caso não seja.
  */
-bool  Hamming::potencia_De_Dois(int num)
+bool Hamming::potencia_De_Dois(int n)
 {
-
+    if(n % 2 != 0)
+        return false;
+    while(n !=2)
+    {
+        n = n / 2;
+        if(n % 2 == 0)
+            continue;
+        else return false;
+    }
+    return true;
 }
 
 /**
  * @brief insere_Bit_Paridade
  * @param bit
  */
-void Hamming::insere_Bit_Paridade(int bit)
+void Hamming::insere_Bit_Paridade()
 {
+
+    for (int i = 0; i < lista_Bits_Dados.size(); i++)
+    {
+        if(Hamming::instancia()->potencia_De_Dois(i))
+        {
+            int a = fila_Bits_Paridade.front();
+            lista_Bits_Dados.insert(lista_Bits_Dados.begin() + i, a);
+            fila_Bits_Paridade.pop();
+        }
+    }
+
+    for (auto n : lista_Bits_Dados)
+        qDebug() << n;
 
 }
 

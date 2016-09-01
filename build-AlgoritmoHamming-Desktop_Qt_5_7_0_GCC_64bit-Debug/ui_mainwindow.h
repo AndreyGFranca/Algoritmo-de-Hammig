@@ -41,18 +41,21 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *btOk;
     QPushButton *btSair;
+    QLabel *lbLateral;
+    QLineEdit *tfBitParidade;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(500, 350);
+        MainWindow->resize(564, 350);
+        MainWindow->setMaximumSize(QSize(564, 350));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayoutWidget = new QWidget(centralWidget);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(0, 70, 491, 141));
+        verticalLayoutWidget->setGeometry(QRect(0, 70, 361, 141));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -85,7 +88,7 @@ public:
 
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(50, 230, 391, 80));
+        horizontalLayoutWidget->setGeometry(QRect(80, 220, 391, 80));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -101,6 +104,12 @@ public:
 
         horizontalLayout->addWidget(btSair);
 
+        lbLateral = new QLabel(centralWidget);
+        lbLateral->setObjectName(QStringLiteral("lbLateral"));
+        lbLateral->setGeometry(QRect(360, 80, 201, 16));
+        tfBitParidade = new QLineEdit(centralWidget);
+        tfBitParidade->setObjectName(QStringLiteral("tfBitParidade"));
+        tfBitParidade->setGeometry(QRect(410, 110, 113, 22));
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -123,6 +132,7 @@ public:
         rbHamm->setText(QApplication::translate("MainWindow", "Algoritmo de Hamming", 0));
         btOk->setText(QApplication::translate("MainWindow", "OK", 0));
         btSair->setText(QApplication::translate("MainWindow", "Sair", 0));
+        lbLateral->setText(QApplication::translate("MainWindow", "TextLabel", 0));
     } // retranslateUi
 
 };

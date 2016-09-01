@@ -20,6 +20,12 @@ private slots:
 
     void on_btOk_clicked();
 
+    void on_rbHamm_clicked();
+
+    void on_rbCodBitPar_clicked();
+
+    void on_rbCodParidade_clicked();
+
 private:
     Ui::MainWindow *ui;
     HammingForm hamming_form;

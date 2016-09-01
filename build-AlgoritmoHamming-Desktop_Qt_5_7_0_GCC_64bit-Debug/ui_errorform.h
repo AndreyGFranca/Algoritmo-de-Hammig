@@ -48,6 +48,7 @@ public:
         label_3->setPixmap(QPixmap(QString::fromUtf8("../../../../Pictures/teste/rosto-triste_318-67603.png.jpeg")));
 
         retranslateUi(ErrorForm);
+        QObject::connect(pushButton, SIGNAL(destroyed()), ErrorForm, SLOT(close()));
 
         QMetaObject::connectSlotsByName(ErrorForm);
     } // setupUi
