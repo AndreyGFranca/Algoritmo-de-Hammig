@@ -16,14 +16,15 @@ Hamming::Hamming()
  */
 bool Hamming::potencia_De_Dois(int n)
 {
+    if (n == 1) return true;
+
     if(n % 2 != 0)
         return false;
-    while(n !=2)
+    while(n != 2)
     {
         n = n / 2;
-        if(n % 2 == 0)
-            continue;
-        else return false;
+        if(n % 2 != 0)
+            return false;
     }
     return true;
 }
@@ -35,15 +36,18 @@ bool Hamming::potencia_De_Dois(int n)
 void Hamming::insere_Bit_Paridade()
 {
 
-    for (int i = 0; i < lista_Bits_Dados.size(); i++)
+    qDebug() << lista_Bits_Dados.front();
+    /*for (int i = 0; i < lista_Bits_Dados.size(); i++)
     {
-        if(Hamming::instancia()->potencia_De_Dois(i))
+        if(potencia_De_Dois(i))
         {
+            qDebug() << i;
             int a = fila_Bits_Paridade.front();
             lista_Bits_Dados.insert(lista_Bits_Dados.begin() + i, a);
             fila_Bits_Paridade.pop();
+
         }
-    }
+    }*/
 
     for (auto n : lista_Bits_Dados)
         qDebug() << n;

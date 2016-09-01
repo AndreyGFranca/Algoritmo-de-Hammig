@@ -23,7 +23,7 @@ void MainWindow::on_btOk_clicked()
 {
     /*Limpando a fila, e a lista */
     Hamming::instancia()->lista_Bits_Dados.clear();
-    Hamming::instancia()->fila_Bits_Paridade = std::queue<int>();
+    //Hamming::instancia()->fila_Bits_Paridade = std::queue<int>();
 
     /*Verifica se a caixa de texto está vazia.*/
     if(ui->tfBit->text() == NULL || ui->tfBitParidade->text() == NULL)
