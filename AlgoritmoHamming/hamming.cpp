@@ -30,27 +30,31 @@ bool Hamming::potencia_De_Dois(int n)
 }
 
 /**
- * @brief insere_Bit_Paridade
- * @param bit
+ * @name insere_Bit_Paridade
+ * @brief
  */
 void Hamming::insere_Bit_Paridade()
 {
+    m_Bit_Dados = lista_Bits_Dados.size();
 
-    qDebug() << lista_Bits_Dados.front();
-    /*for (int i = 0; i < lista_Bits_Dados.size(); i++)
+    int tam = lista_Bits_Dados.size();
+    for (int i = 1; i <= tam; i++)
     {
         if(potencia_De_Dois(i))
         {
-            qDebug() << i;
-            int a = fila_Bits_Paridade.front();
-            lista_Bits_Dados.insert(lista_Bits_Dados.begin() + i, a);
-            fila_Bits_Paridade.pop();
-
+            int a = fila_Bits_Paridade[fila_Bits_Paridade.size() - 1];
+            lista_Bits_Dados.insert(lista_Bits_Dados.begin() + i - 1, a);
+            fila_Bits_Paridade.erase(fila_Bits_Paridade.end() - 1);
+            if(fila_Bits_Paridade.empty())
+                break;
         }
-    }*/
+    }
 
-    for (auto n : lista_Bits_Dados)
+    for (auto n : lista_Bits_Dados){
         qDebug() << n;
+    }
+
+    calcula_Bit_Errado();
 
 }
 
@@ -58,10 +62,59 @@ void Hamming::insere_Bit_Paridade()
  * @brief calcula_Bit_Errado
  * @param bit
  */
-void Hamming::calcula_Bit_Errado(int bit)
+void Hamming::calcula_Bit_Errado()
 {
 
+    std::vector <int> bits_Errados;
+    int n = 0, acumulador_Bits = 0;
+
+    /*Verifica a quantidade de potencias de dois */
+    for (int i = m_Bit_Dados; i > 0; i--)
+    {
+        if (potencia_De_Dois(i))
+            n++;
+    }
+
+    /* Percorre a lista, se achou um bit com indice potencia de dois
+     * faz um novo laço que anda j casas e pula j casas, e soma os
+     * bits com valor 1.
+     */
+    for (int i = 1; i <= lista_Bits_Dados.size(); i++)
+    {
+        if(potencia_De_Dois(i))
+        {
+            bool flag = true;
+            for (int j = (i + 1); j < lista_Bits_Dados.size(); j+= i )
+            {
+
+                if (flag)
+                {
+                    for (int k = j; k < (i - 1); k++)
+                    {
+                        //if (flag)
+                        //{
+                            if (lista_Bits_Dados[k] == 1)
+                                acumulador_Bits++;
+                        //}
+                        //flag = !flag;
+                    }
+                    flag = !flag;
+                }
+
+            }
+            if (acumulador_Bits % 2 != 0)
+                bits_Errados.push_back(i);
+        }
+
+    }
+
+    /*TESTES*/
+    int soma = 0;
+    for (auto n: bits_Errados)
+        soma += bits_Errados.at(n);
+    qDebug() << "\n" << soma;
 }
+
 
 /*Getters*/
 int Hamming::get_Bit_Dados() const

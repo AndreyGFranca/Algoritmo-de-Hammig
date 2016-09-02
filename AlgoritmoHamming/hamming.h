@@ -34,13 +34,13 @@ public:
     }
 
     std::vector<int>    lista_Bits_Dados;
-    std::queue<int>     fila_Bits_Paridade;
+    std::vector<int>     fila_Bits_Paridade;
 
     /* Métodos: */
     void printa_Mensagem();
     bool potencia_De_Dois(int num);
     void insere_Bit_Paridade();
-    void calcula_Bit_Errado(int bit);
+    void calcula_Bit_Errado();
 
     /*Getters*/
     int get_Bit_Dados() const;

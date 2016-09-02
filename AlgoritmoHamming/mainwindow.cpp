@@ -23,7 +23,7 @@ void MainWindow::on_btOk_clicked()
 {
     /*Limpando a fila, e a lista */
     Hamming::instancia()->lista_Bits_Dados.clear();
-    //Hamming::instancia()->fila_Bits_Paridade = std::queue<int>();
+    Hamming::instancia()->fila_Bits_Paridade.clear();
 
     /*Verifica se a caixa de texto está vazia.*/
     if(ui->tfBit->text() == NULL || ui->tfBitParidade->text() == NULL)
@@ -91,7 +91,9 @@ void MainWindow::on_btOk_clicked()
 
         /* Adciona os bits na fila de bits de paridade. */
         int bit = qs_Bit_Paridade.at(var).digitValue();
-        Hamming::instancia()->fila_Bits_Paridade.push(bit);
+
+        Hamming::instancia()->fila_Bits_Paridade.insert(
+                    Hamming::instancia()->fila_Bits_Paridade.begin(), bit);
     }
 
     if(erro)
@@ -123,7 +125,8 @@ void MainWindow::on_btOk_clicked()
     /*for (auto n : Hamming::instancia()->lista_Bits_Dados)
         qDebug("%d", n);*/
 
-    Hamming::instancia()->insere_Bit_Paridade();
+    if(!erro)
+        Hamming::instancia()->insere_Bit_Paridade();
 
 }
 
