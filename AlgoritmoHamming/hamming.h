@@ -2,7 +2,6 @@
 #define HAMMING_H
 
 #include <vector>
-#include <queue>
 
 class Hamming
 {
