@@ -79,22 +79,32 @@ void Hamming::calcula_Bit_Errado()
      * faz um novo laço que anda j casas e pula j casas, e soma os
      * bits com valor 1.
      */
-    for (int i = 1; i <= lista_Bits_Dados.size(); i++)
+    int tam = lista_Bits_Dados.size();
+    /*for (int i = 0; i < lista_Bits_Dados.size(); i++){
+        lista_Bits_Dados.push_back(0);
+    }*/
+
+    bool flag;
+    for (int i = 1; i < tam; i++)
     {
+        flag = true;
         if(potencia_De_Dois(i))
         {
-            bool flag = true;
-            for (int j = (i + 1); j < lista_Bits_Dados.size(); j+= i )
+            flag = true;
+            for (int j = i; j < tam; j+=i )
             {
-
+                //qDebug() << "a";
                 if (flag)
                 {
-                    for (int k = j; k < (i - 1); k++)
+                    int i1 = i;
+                    if(j + i > lista_Bits_Dados.size()) i1 = lista_Bits_Dados.size() - j;
+                    for (int k = 0; k < i1; k++)
                     {
                         //if (flag)
                         //{
-                            if (lista_Bits_Dados[k] == 1)
-                                acumulador_Bits++;
+                        //if ((j + k) > tam) break;
+                        if (lista_Bits_Dados.at(j+k) == 1)
+                            acumulador_Bits++;
                         //}
                         //flag = !flag;
                     }
@@ -108,11 +118,15 @@ void Hamming::calcula_Bit_Errado()
 
     }
 
+    qDebug() << "\n\n";
+    for (auto n: bits_Errados)
+        qDebug() << n;
+
     /*TESTES*/
-    int soma = 0;
+    /*int soma = 0;
     for (auto n: bits_Errados)
         soma += bits_Errados.at(n);
-    qDebug() << "\n" << soma;
+    qDebug() << "\n" << soma;*/
 }
 
 
