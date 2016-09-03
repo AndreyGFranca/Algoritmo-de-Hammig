@@ -33,7 +33,7 @@ public:
     }
 
     std::vector<int>    lista_Bits_Dados;
-    std::vector<int>     fila_Bits_Paridade;
+    std::vector<int>    fila_Bits_Paridade;
 
     /* Métodos: */
     void printa_Mensagem();

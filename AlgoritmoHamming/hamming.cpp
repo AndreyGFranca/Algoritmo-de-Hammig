@@ -66,14 +66,14 @@ void Hamming::calcula_Bit_Errado()
 {
 
     std::vector <int> bits_Errados;
-    int n = 0, acumulador_Bits = 0;
+    int acumulador_Bits = 0;
 
     /*Verifica a quantidade de potencias de dois */
-    for (int i = m_Bit_Dados; i > 0; i--)
+    /*for (int i = m_Bit_Dados; i > 0; i--)
     {
         if (potencia_De_Dois(i))
             n++;
-    }
+    }*/
 
     /* Percorre a lista, se achou um bit com indice potencia de dois
      * faz um novo laço que anda j casas e pula j casas, e soma os
@@ -84,35 +84,51 @@ void Hamming::calcula_Bit_Errado()
         lista_Bits_Dados.push_back(0);
     }*/
 
-    bool flag;
+    bool flag, flag2;
     for (int i = 1; i < tam; i++)
     {
-        flag = true;
         if(potencia_De_Dois(i))
         {
             flag = true;
-            for (int j = i; j < tam; j+=i )
+            flag2 = false;
+
+            acumulador_Bits = 0;
+            for (int j = i-1; j < tam; j+=i )
             {
                 //qDebug() << "a";
                 if (flag)
                 {
                     int i1 = i;
                     if(j + i > lista_Bits_Dados.size()) i1 = lista_Bits_Dados.size() - j;
+                    qDebug() << "\n";
                     for (int k = 0; k < i1; k++)
                     {
                         //if (flag)
                         //{
                         //if ((j + k) > tam) break;
-                        if (lista_Bits_Dados.at(j+k) == 1)
-                            acumulador_Bits++;
+                        if(flag2)
+                        {
+                            if (lista_Bits_Dados.at(j+k) == 1)
+                                acumulador_Bits++;
+
+                            qDebug() << lista_Bits_Dados.at(j+k);
+                        }
+                        else
+                        {
+                            flag2 = !flag2;
+                        }
                         //}
                         //flag = !flag;
                     }
-                    flag = !flag;
-                }
 
+                }
+                flag = !flag;
             }
-            if (acumulador_Bits % 2 != 0)
+            qDebug() << "Acumulador = " << acumulador_Bits;
+            if (lista_Bits_Dados.at(i-1) == 1 && acumulador_Bits % 2 == 0)
+                bits_Errados.push_back(i);
+
+            else if (lista_Bits_Dados.at(i-1) == 0 && acumulador_Bits % 2 == 1)
                 bits_Errados.push_back(i);
         }
 
