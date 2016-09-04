@@ -2,6 +2,7 @@
 #define HAMMING_H
 
 #include <vector>
+#include <QString>
 
 class Hamming
 {
@@ -34,6 +35,9 @@ public:
 
     std::vector<int>    lista_Bits_Dados;
     std::vector<int>    fila_Bits_Paridade;
+    QString             copia_Lista;
+
+    int soma;
 
     /* Métodos: */
     void printa_Mensagem();

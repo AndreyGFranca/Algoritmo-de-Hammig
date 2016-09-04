@@ -5,7 +5,7 @@ Hamming* Hamming::s_Instancia = 0;
 
 Hamming::Hamming()
 {
-
+    this->soma = 0;
 }
 
 
@@ -139,10 +139,12 @@ void Hamming::calcula_Bit_Errado()
         qDebug() << n;
 
     /*TESTES*/
-    /*int soma = 0;
-    for (auto n: bits_Errados)
-        soma += bits_Errados.at(n);
-    qDebug() << "\n" << soma;*/
+    //int soma = 0;
+    for (int i = 0; i < bits_Errados.size(); i++){
+        this->soma += bits_Errados[i];
+    }
+
+    qDebug() << soma;
 }
 
 
