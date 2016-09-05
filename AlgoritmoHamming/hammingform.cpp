@@ -6,8 +6,8 @@ HammingForm::HammingForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::HammingForm)
 {
-    QString lista;
     ui->setupUi(this);
+    QString lista;
     ui->lbComX->setText(Hamming::instancia()->copia_Lista);
 
 
@@ -42,8 +42,16 @@ HammingForm::HammingForm(QWidget *parent) :
 
     lista.append("</span>");
     */
-    auto printable = QStringLiteral("O bit é errado está na posicao de numero %1 na palavra").arg(Hamming::instancia()->soma);
-    ui->lbStrBitErrado->setText(printable);
+    if (Hamming::instancia()->soma != 0 && Hamming::instancia()->soma < Hamming::instancia()->lista_Bits_Dados.size())
+    {
+        auto printable = QStringLiteral("O bit é errado está na posicao de numero %1 na palavra").arg(Hamming::instancia()->soma);
+        ui->lbStrBitErrado->setText(printable);
+    }
+    else if (Hamming::instancia()->soma >= Hamming::instancia()->lista_Bits_Dados.size())
+        ui->lbStrBitErrado->setText("Não foi possivel encontrar o bit errado!");
+
+    else
+        ui->lbStrBitErrado->setText("Nenhum bit errado!");
 }
 
 HammingForm::~HammingForm()

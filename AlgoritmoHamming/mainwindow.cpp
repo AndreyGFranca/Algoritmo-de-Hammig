@@ -3,6 +3,10 @@
 #include "hammingform.h"
 #include "errorform.h"
 #include "hamming.h"
+#include "paridade.h"
+#include "paridadesimples.h"
+#include "parform.h"
+#include "parsimplesform.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -51,16 +55,6 @@ void MainWindow::on_btOk_clicked()
 
     /*copia a string para outra e adciona x na copia, para printar no hammingform*/
     Hamming::instancia()->copia_Lista = qs_Bit;
-    for (int i = 1; i <= qs_Bit.length(); i++)
-    {
-        if (Hamming::instancia()->potencia_De_Dois(i))
-        {
-            Hamming::instancia()->copia_Lista.insert(i-1, QString("X"));
-        }
-
-    }
-
-    //qDebug(""+ Hamming::instancia()->copia_Lista.toLatin1()+"");
 
     /* Percorre cada digito da string.*/
     for (int var = 0; var < qs_Bit.length(); ++var)
@@ -89,7 +83,6 @@ void MainWindow::on_btOk_clicked()
      * com o tfBits, ou seja, verifica os erros, e armazena o bit pa_
      * ridade em uma fila.
      */
-
     QString qs_Bit_Paridade = ui->tfBitParidade->text();
     erro = false;
 
@@ -121,65 +114,55 @@ void MainWindow::on_btOk_clicked()
     unsigned int tam = Hamming::instancia()->lista_Bits_Dados.size(), aux = 1, cont = 0;
     aux = 1; cont = 0;
 
-    /*Se o tamanho da palavra de dados for igual 1
-     * Adciona vai adciona o primeiro bit de paridade na posicao 1,
-     * e o segundo bit de paridade na posicao 2.
-     */
-    erro = true;
-    if (tam == 1)
+    while(aux <= tam)
     {
-
-       int a = Hamming::instancia()->fila_Bits_Paridade[Hamming::instancia()->fila_Bits_Paridade.size() - 1];
-       Hamming::instancia()->lista_Bits_Dados.insert(Hamming::instancia()->lista_Bits_Dados.begin(), a);
-       Hamming::instancia()->fila_Bits_Paridade.erase(Hamming::instancia()->fila_Bits_Paridade.end() - 1);
-       Hamming::instancia()->lista_Bits_Dados.insert(Hamming::instancia()->lista_Bits_Dados.begin()+1, a);
-
-       Hamming::instancia()->calcula_Bit_Errado();
-       HammingForm *hamming_Form = new HammingForm();
-       hamming_Form->setVisible(true);
-
+        aux *=2;
+        cont++; /*será justamento o numero de bits paridade necessário na palavra.*/
     }
-    else if (tam == 2)
-    {
-        int a = Hamming::instancia()->fila_Bits_Paridade[Hamming::instancia()->fila_Bits_Paridade.size() - 1];
-        Hamming::instancia()->lista_Bits_Dados.insert(Hamming::instancia()->lista_Bits_Dados.begin(), a);
-        Hamming::instancia()->fila_Bits_Paridade.erase(Hamming::instancia()->fila_Bits_Paridade.end() - 1);
-        Hamming::instancia()->lista_Bits_Dados.insert(Hamming::instancia()->lista_Bits_Dados.begin()+1, a);
-        Hamming::instancia()->fila_Bits_Paridade.erase(Hamming::instancia()->fila_Bits_Paridade.end() - 1);
-        Hamming::instancia()->lista_Bits_Dados.insert(Hamming::instancia()->lista_Bits_Dados.begin()+3, a);
 
-        Hamming::instancia()->calcula_Bit_Errado();
-        HammingForm *hamming_Form = new HammingForm();
-        hamming_Form->setVisible(true);
-    }
-    else if (tam > 2)
+    for (int i = 1; i <= qs_Bit.length() + cont + 1; i++)
     {
-        while(aux <= tam)
+        if (Hamming::instancia()->potencia_De_Dois(i))
         {
-            aux *=2;
-            cont++; /*será justamento o numero de bits paridade necessário na palavra.*/
-        }
-        /*qDebug("%d", cont);*/
-
-        /*Verifica se o tamanho do bit de paridade é maior do que devia.*/
-        if(Hamming::instancia()->fila_Bits_Paridade.size() != cont)
-        {
-            ErrorForm *err = new ErrorForm();
-            err->setVisible(true);
-            erro = !erro;
+            Hamming::instancia()->copia_Lista.insert(i-1, QString("X"));
         }
 
-        /*for (auto n : Hamming::instancia()->lista_Bits_Dados)
-            qDebug("%d", n);*/
+    }
 
-        if(erro)
+   Paridade::instancia()->bit_Dados = Hamming::instancia()->lista_Bits_Dados;
+   ParidadeSimples::instancia()->bit_Dados = Hamming::instancia()->lista_Bits_Dados;
+
+   //Paridade::instancia()->bit_Paridade = Hamming::instancia()->fila_Bits_Paridade;
+
+    /*Verifica se o tamanho do bit de paridade é maior do que devia.*/
+    if(ui->rbHamm->isChecked() && Hamming::instancia()->fila_Bits_Paridade.size() <= cont -1)
+    {
+        ErrorForm *err = new ErrorForm();
+        err->setVisible(true);
+        erro = !erro;
+    }
+
+    if(!erro)
+    {
+        if(ui->rbHamm->isChecked())
         {
             Hamming::instancia()->insere_Bit_Paridade();
             HammingForm *hamming_Form = new HammingForm();
             hamming_Form->setVisible(true);
         }
-    }
+        else if (ui->rbCodBitPar->isChecked() && ui->tfBitParidade->text().size() == 1)
+        {
+            Paridade::instancia()->bit_Paridade = ui->tfBitParidade->text();
+            ParForm *paridade_Form = new ParForm();
+            paridade_Form->setVisible(true);
+        }
+        else if (ui->rbCodParidade->isChecked())
+        {
+            ParSimplesForm *par_Form = new ParSimplesForm();
+            par_Form->setVisible(true);
+        }
 
+    }
 }
 
 void MainWindow::on_rbHamm_clicked()

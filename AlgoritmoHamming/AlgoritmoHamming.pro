@@ -16,13 +16,23 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     hamming.cpp \
     hammingform.cpp \
-    errorform.cpp
+    errorform.cpp \
+    paridade.cpp \
+    paridadesimples.cpp \
+    parform.cpp \
+    parsimplesform.cpp
 
 HEADERS  += mainwindow.h \
     hamming.h \
     hammingform.h \
-    errorform.h
+    errorform.h \
+    paridade.h \
+    paridadesimples.h \
+    parform.h \
+    parsimplesform.h
 
 FORMS    += mainwindow.ui \
     hammingform.ui \
-    errorform.ui
+    errorform.ui \
+    parform.ui \
+    parsimplesform.ui

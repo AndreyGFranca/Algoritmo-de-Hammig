@@ -18,11 +18,6 @@ private:
 
 public:
 
-    /**
-     * @name instancia
-     * @brief Padrão singleton.
-     * @return uma instancia da classe.
-     */
     static Hamming *instancia()
     {
         if (s_Instancia == 0)
