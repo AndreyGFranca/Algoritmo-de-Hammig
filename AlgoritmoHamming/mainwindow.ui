@@ -130,7 +130,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Informe um bit de qualquer tamanho:</string>
+     <string>Informe uma palavra de qualquer tamanho:</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">

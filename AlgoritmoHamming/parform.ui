@@ -339,22 +339,6 @@
     <string>Explicação:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_18">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>130</y>
-     <width>111</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: italic 12pt &quot;Sans Serif&quot;;</string>
-   </property>
-   <property name="text">
-    <string>Explicação:</string>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections/>

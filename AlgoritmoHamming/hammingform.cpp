@@ -13,23 +13,27 @@ HammingForm::HammingForm(QWidget *parent) :
     ui->lb_Bits_Dados->setText(Hamming::instancia()->bits_Originais);
     ui->label->setText(Hamming::instancia()->paridade_Originais);
 
-    auto printable = QStringLiteral("1° Os bits de paridades são destacados na palavra."
-                                    "Note que os bits de paridade são adcionados nas posicoes"
+    auto printable = QStringLiteral("1° Os bits de paridades são destacados na palavra. "
+                                    "Note que os bits de paridade são adcionados nas posições "
                                     "em que os indices são potencia de dois.\n"
-                                    "2° Os bits de paridades são adcionados na palavra.\n"
+                                    "2° Os bits de paridades são adicionados na palavra.\n"
                                     "3 O bit errado na palavra é destacado com a cor vermelha\n"
                                     "4° São retirados os bits de paridade, restando só a palavra"
-                                    "O bit errado permanece com a cor azul.\n\n"
-                                    "Para encontrar o bit errado, primeiramente insira os bits de padidade"
-                                    "nas posições em que o indice seja uma potência de dois (1,2, 4, 8, 16...)\n"
-                                    "Feito isso o próximo passo é contar as quantidades de números 1s"
-                                    "em intervalos pré-definidos. O primeiro bit de paridade na posição 1"
-                                    "verifica cada bit até o final da palavra em um intervalo de 1 em 1. O "
-                                    "Segundo bit verifica de 2 em 2, o quarto bit de 4 em 4, e assim por diante.\n"
-                                    "A cada soma dos numeros uns, verifica essa soma é impar e par, caso seja impar ou par"
-                                    "e o bit de paridade seja contrário, então tem um erro alí. \n\n"
-                                    "Após encontrar todos os erros, basta somar os bits que apontaram erro, esse "
-                                    "valor será o indice do bit errado.");
+                                    " o bit errado permanece com a cor vermelha.\n\n"
+                                    "Para encontrar o bit errado, primeiramente insira os bits de padidade "
+                                    "nas posições em que o indice seja uma potência de dois (1,2, 4, 8, 16, e assim por diante)\n"
+                                    "Feito isso o próximo passo é contar as quantidades de números 1's "
+                                    "em intervalos pré-definidos. O primeiro bit de paridade na posição 1 "
+                                    "verifica cada bit até o final da palavra verificando um e pulando um, e assim por diante"
+                                    ". O Segundo bit verifica 2 e pula 2, e assim por diante,"
+                                    "o quarto bit, verifica 4 e pula 4 e assim por diante. Isso se repete até o final da palavra "
+                                    "com todos os bits de paridade.\n"
+                                    "A cada soma dos numeros 1's, verifica se essa soma é ímpar ou par, caso seja ímpar "
+                                    "e o bit de paridade seja par, então tem um erro alí, caso a soma seja par, e o "
+                                    "bit paridade seja 1 então este bit está errado. \n\n"
+                                    "Após encontrar todos os erros, basta somar os indices dos bits que apontaram erro, esse "
+                                    "valor será o indice do bit errado. Por exemplo o 2° e o 3° bit apontam erro, "
+                                    "então o 5° bit dessa palavra é o bit errado.");
 
     ui->tf_Informacoes->setText(printable);
 

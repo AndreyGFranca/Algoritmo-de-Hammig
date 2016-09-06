@@ -17,8 +17,8 @@ ParForm::ParForm(QWidget *parent) :
     auto printable = QStringLiteral("A soma dos numeros 1's é igual a: %1\n"
                                     "Após receber a palavra é feita uma contagem de todos os 1's, se o número de 1's "
                                     "for um número par e o bit de paridade informado for 0, a palavra está correta, se "
-                                    "o número de 1's for um número impar a palavra está correta, caso contrário a essas duas "
-                                    "suposições o bit contém erro.").arg(Paridade::instancia()->acumulador_Bits);
+                                    "o número de 1's for um número ímpar a palavra está correta, caso contrário essas duas "
+                                    "suposições, o bit contém erro.").arg(Paridade::instancia()->acumulador_Bits);
 
     ui->tf_Informacoes->setText(printable);
     for (int i = 0; i < Paridade::instancia()->bit_Dados.size(); ++i)

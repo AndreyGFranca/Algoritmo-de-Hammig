@@ -33,6 +33,8 @@ public:
         if (ErrorForm->objectName().isEmpty())
             ErrorForm->setObjectName(QStringLiteral("ErrorForm"));
         ErrorForm->resize(388, 186);
+        ErrorForm->setMinimumSize(QSize(388, 186));
+        ErrorForm->setMaximumSize(QSize(388, 186));
         label = new QLabel(ErrorForm);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(10, 10, 241, 16));
@@ -55,7 +57,7 @@ public:
 
     void retranslateUi(QDialog *ErrorForm)
     {
-        ErrorForm->setWindowTitle(QApplication::translate("ErrorForm", "Dialog", 0));
+        ErrorForm->setWindowTitle(QApplication::translate("ErrorForm", "Ops! Algo inesperado aconteceu!", 0));
         label->setText(QApplication::translate("ErrorForm", "Desculpe! mas ocorreu algum erro.", 0));
         label_2->setText(QApplication::translate("ErrorForm", "Cheque todos os campos, e veja se est\303\241 tudo certo.", 0));
         pushButton->setText(QApplication::translate("ErrorForm", "Voltar", 0));

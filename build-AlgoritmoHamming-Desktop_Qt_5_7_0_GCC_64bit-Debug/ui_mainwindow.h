@@ -32,7 +32,6 @@ public:
     QWidget *centralWidget;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
-    QLabel *label;
     QLineEdit *tfBit;
     QRadioButton *rbCodParidade;
     QRadioButton *rbCodBitPar;
@@ -43,29 +42,34 @@ public:
     QPushButton *btSair;
     QLabel *lbLateral;
     QLineEdit *tfBitParidade;
+    QLabel *label;
+    QLabel *label_2;
+    QLabel *label_3;
+    QLabel *label_4;
+    QLabel *label_5;
+    QLabel *label_6;
+    QLabel *label_7;
+    QLabel *label_8;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(564, 350);
-        MainWindow->setMaximumSize(QSize(564, 350));
+        MainWindow->resize(573, 410);
+        MainWindow->setMinimumSize(QSize(573, 410));
+        MainWindow->setMaximumSize(QSize(573, 410));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayoutWidget = new QWidget(centralWidget);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(0, 70, 361, 141));
+        verticalLayoutWidget->setGeometry(QRect(10, 240, 361, 102));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(verticalLayoutWidget);
-        label->setObjectName(QStringLiteral("label"));
-
-        verticalLayout->addWidget(label);
-
         tfBit = new QLineEdit(verticalLayoutWidget);
         tfBit->setObjectName(QStringLiteral("tfBit"));
 
@@ -78,6 +82,7 @@ public:
 
         rbCodBitPar = new QRadioButton(verticalLayoutWidget);
         rbCodBitPar->setObjectName(QStringLiteral("rbCodBitPar"));
+        rbCodBitPar->setAutoFillBackground(false);
 
         verticalLayout->addWidget(rbCodBitPar);
 
@@ -88,7 +93,7 @@ public:
 
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(80, 220, 391, 80));
+        horizontalLayoutWidget->setGeometry(QRect(60, 350, 443, 41));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -106,10 +111,36 @@ public:
 
         lbLateral = new QLabel(centralWidget);
         lbLateral->setObjectName(QStringLiteral("lbLateral"));
-        lbLateral->setGeometry(QRect(360, 80, 201, 16));
+        lbLateral->setGeometry(QRect(370, 220, 201, 16));
         tfBitParidade = new QLineEdit(centralWidget);
         tfBitParidade->setObjectName(QStringLiteral("tfBitParidade"));
-        tfBitParidade->setGeometry(QRect(410, 110, 113, 22));
+        tfBitParidade->setGeometry(QRect(370, 240, 113, 22));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(10, 220, 261, 16));
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(10, 130, 111, 91));
+        label_2->setPixmap(QPixmap(QString::fromUtf8("../../../../Pictures/teste/dog.png")));
+        label_3 = new QLabel(centralWidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(30, 0, 311, 201));
+        label_3->setPixmap(QPixmap(QString::fromUtf8("../../../../Pictures/teste/Brushe-balao-de-fala-pfs.png")));
+        label_4 = new QLabel(centralWidget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(130, 30, 111, 16));
+        label_5 = new QLabel(centralWidget);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(110, 50, 161, 16));
+        label_6 = new QLabel(centralWidget);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(110, 70, 161, 16));
+        label_7 = new QLabel(centralWidget);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(120, 90, 141, 16));
+        label_8 = new QLabel(centralWidget);
+        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setGeometry(QRect(160, 100, 101, 16));
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -122,17 +153,24 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Aprendendo Arquitetura de Computadores com o Fred!", 0));
 #ifndef QT_NO_WHATSTHIS
         MainWindow->setWhatsThis(QString());
 #endif // QT_NO_WHATSTHIS
-        label->setText(QApplication::translate("MainWindow", "Informe os bits de qualquer tamanho", 0));
         rbCodParidade->setText(QApplication::translate("MainWindow", "C\303\263digo de Paridade", 0));
         rbCodBitPar->setText(QApplication::translate("MainWindow", "C\303\263digo de Paridade com bit de paridade", 0));
         rbHamm->setText(QApplication::translate("MainWindow", "Algoritmo de Hamming", 0));
         btOk->setText(QApplication::translate("MainWindow", "OK", 0));
         btSair->setText(QApplication::translate("MainWindow", "Sair", 0));
         lbLateral->setText(QApplication::translate("MainWindow", "TextLabel", 0));
+        label->setText(QApplication::translate("MainWindow", "Informe uma palavra de qualquer tamanho:", 0));
+        label_2->setText(QString());
+        label_3->setText(QString());
+        label_4->setText(QApplication::translate("MainWindow", "Ol\303\241, eu sou o Fred", 0));
+        label_5->setText(QApplication::translate("MainWindow", "Vou te ensinar algumas", 0));
+        label_6->setText(QApplication::translate("MainWindow", "coisas bem legais, sobre", 0));
+        label_7->setText(QApplication::translate("MainWindow", "Arquitetura de ", 0));
+        label_8->setText(QApplication::translate("MainWindow", "Computadores", 0));
     } // retranslateUi
 
 };
