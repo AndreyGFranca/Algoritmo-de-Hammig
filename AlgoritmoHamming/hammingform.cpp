@@ -13,6 +13,16 @@ HammingForm::HammingForm(QWidget *parent) :
     ui->lb_Bits_Dados->setText(Hamming::instancia()->bits_Originais);
     ui->label->setText(Hamming::instancia()->paridade_Originais);
 
+    auto printable = QStringLiteral("1° Os bits de paridades são destacados na palavra."
+                                    "Note que os bits de paridade são adcionados nas posicoes"
+                                    "em que os indices são potencia de dois.\n"
+                                    "2° Os bits de paridades são adcionados na palavra."
+                                    "3 O bit errado na palavra é destacado com a cor vermelha"
+                                    "4° São retirados os bits de paridade, restando só a palavra"
+                                    "O bit errado permanece com a cor azul.");
+
+    ui->tf_Informacoes->setText(printable);
+
     /*passar vector para qString*/
    /* for (int i = 0; i < Hamming::instancia()->lista_Bits_Dados.size(); ++i)
     {
@@ -132,11 +142,15 @@ HammingForm::HammingForm(QWidget *parent) :
         ui->lbStrBitErrado->setText(bit_Errado);
         ui->lbStrOpc4->setText(bit_Errado_Sem_Paridade);
     }
-    else if (Hamming::instancia()->soma >= Hamming::instancia()->lista_Bits_Dados.size())
+    else if (Hamming::instancia()->soma >= Hamming::instancia()->lista_Bits_Dados.size()){
         ui->lbStrBitErrado->setText("Não foi possivel encontrar o bit errado!");
+        ui->lbStrOpc4->setText("Não foi possivel encontrar o bit errado!");
+    }
 
-    else
+    else{
         ui->lbStrBitErrado->setText("Nenhum bit errado!");
+        ui->lbStrOpc4->setText("Nenhum bit errado!");
+    }
 
 }
 

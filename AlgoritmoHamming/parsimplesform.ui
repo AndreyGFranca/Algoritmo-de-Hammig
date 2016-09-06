@@ -16,6 +16,12 @@
     <height>266</height>
    </size>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>522</width>
+    <height>349</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Paridade</string>
   </property>
@@ -101,6 +107,12 @@ color:blue;
      <width>381</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>381</width>
+     <height>16</height>
+    </size>
    </property>
    <property name="maximumSize">
     <size>

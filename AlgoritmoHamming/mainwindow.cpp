@@ -139,12 +139,12 @@ void MainWindow::on_btOk_clicked()
 
     /*Verifica se o tamanho do bit de paridade é maior do que devia.*/
     int tam1 = Hamming::instancia()->fila_Bits_Paridade.size();
-    if(ui->rbHamm->isChecked() && (ui->tfBitParidade->text().size() < cont + 1) || (ui->tfBitParidade->text().size() > cont + 1))
+    /*if(ui->rbHamm->isChecked() && (ui->tfBitParidade->text().size() < cont + 1) || (ui->tfBitParidade->text().size() > cont + 1))
     {
         ErrorForm *err = new ErrorForm();
         err->setVisible(true);
         erro = !erro;
-    }
+    }*/
 
     if(!erro)
     {

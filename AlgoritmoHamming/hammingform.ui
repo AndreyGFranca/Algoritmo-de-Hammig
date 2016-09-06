@@ -10,6 +10,12 @@
     <height>488</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>554</width>
+    <height>488</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -362,6 +368,12 @@ font:bold;</string>
      <height>191</height>
     </rect>
    </property>
+   <property name="maximumSize">
+    <size>
+     <width>271</width>
+     <height>191</height>
+    </size>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -461,36 +473,6 @@ font: 12pt &quot;Sans Serif&quot;;</string>
     <string>TextLabel</string>
    </property>
   </widget>
-  <zorder>horizontalLayoutWidget</zorder>
-  <zorder>label_4</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label_5</zorder>
-  <zorder>label_6</zorder>
-  <zorder>label_7</zorder>
-  <zorder>label_3</zorder>
-  <zorder>tf_Informacoes</zorder>
-  <zorder>label_8</zorder>
-  <zorder>lbComX</zorder>
-  <zorder>label_9</zorder>
-  <zorder>lbComBitParidade</zorder>
-  <zorder>lbStrBitErrado</zorder>
-  <zorder>label_10</zorder>
-  <zorder>label_11</zorder>
-  <zorder>label_12</zorder>
-  <zorder>label_13</zorder>
-  <zorder>lb_Bits_Dados</zorder>
-  <zorder>label_14</zorder>
-  <zorder>label_15</zorder>
-  <zorder>label_16</zorder>
-  <zorder>label_17</zorder>
-  <zorder>lb_Bits_Dados</zorder>
-  <zorder>label</zorder>
-  <zorder>label_18</zorder>
-  <zorder>label_19</zorder>
-  <zorder>label_20</zorder>
-  <zorder>label_21</zorder>
-  <zorder>label_22</zorder>
-  <zorder>lbStrOpc4</zorder>
  </widget>
  <resources/>
  <connections/>
