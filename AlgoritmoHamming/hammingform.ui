@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Codigo de Hamming</string>
   </property>
   <property name="styleSheet">
    <string notr="true">border-color: rgb(255, 0, 0);</string>
@@ -62,8 +62,8 @@ color: rgb(0, 0, 255);
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>160</y>
+     <x>360</x>
+     <y>30</y>
      <width>189</width>
      <height>61</height>
     </rect>
@@ -75,8 +75,8 @@ color: rgb(0, 0, 255);
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>140</y>
+     <x>280</x>
+     <y>10</y>
      <width>60</width>
      <height>49</height>
     </rect>
@@ -88,8 +88,8 @@ color: rgb(0, 0, 255);
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>130</y>
+     <x>360</x>
+     <y>0</y>
      <width>189</width>
      <height>61</height>
     </rect>
@@ -101,8 +101,8 @@ color: rgb(0, 0, 255);
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>190</y>
+     <x>360</x>
+     <y>60</y>
      <width>189</width>
      <height>61</height>
     </rect>
@@ -114,8 +114,8 @@ color: rgb(0, 0, 255);
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>230</y>
+     <x>360</x>
+     <y>100</y>
      <width>189</width>
      <height>61</height>
     </rect>
@@ -127,8 +127,8 @@ color: rgb(0, 0, 255);
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>280</y>
+     <x>360</x>
+     <y>150</y>
      <width>131</width>
      <height>16</height>
     </rect>
@@ -264,8 +264,8 @@ font: 12pt &quot;Sans Serif&quot;;</string>
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>180</y>
+     <x>340</x>
+     <y>50</y>
      <width>16</width>
      <height>16</height>
     </rect>
@@ -280,8 +280,8 @@ font: 12pt &quot;Sans Serif&quot;;</string>
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>210</y>
+     <x>340</x>
+     <y>80</y>
      <width>16</width>
      <height>16</height>
     </rect>
@@ -296,8 +296,8 @@ font: 12pt &quot;Sans Serif&quot;;</string>
   <widget class="QLabel" name="label_13">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>150</y>
+     <x>340</x>
+     <y>20</y>
      <width>16</width>
      <height>16</height>
     </rect>
@@ -312,9 +312,9 @@ font: 12pt &quot;Sans Serif&quot;;</string>
   <widget class="QLabel" name="label_14">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>250</y>
-     <width>20</width>
+     <x>340</x>
+     <y>120</y>
+     <width>21</width>
      <height>20</height>
     </rect>
    </property>
@@ -329,8 +329,8 @@ font:bold;</string>
   <widget class="QLabel" name="label_15">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>280</y>
+     <x>340</x>
+     <y>150</y>
      <width>20</width>
      <height>20</height>
     </rect>
