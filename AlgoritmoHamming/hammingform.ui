@@ -7,14 +7,8 @@
     <x>0</x>
     <y>0</y>
     <width>554</width>
-    <height>350</height>
+    <height>488</height>
    </rect>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>554</width>
-    <height>350</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -26,14 +20,19 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
-     <width>321</width>
-     <height>89</height>
+     <y>240</y>
+     <width>450</width>
+     <height>41</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QLabel" name="lb_Bits_Dados">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Sans Serif&quot;;
+font:bold;
+</string>
+      </property>
       <property name="text">
        <string>Aqui ficara os bits de dados</string>
       </property>
@@ -41,6 +40,12 @@
     </item>
     <item>
      <widget class="QLabel" name="label">
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Sans Serif&quot;;
+font:bold;
+color: rgb(0, 0, 255);
+</string>
+      </property>
       <property name="text">
        <string>Bits paridade</string>
       </property>
@@ -52,7 +57,7 @@
    <property name="geometry">
     <rect>
      <x>410</x>
-     <y>20</y>
+     <y>160</y>
      <width>189</width>
      <height>61</height>
     </rect>
@@ -65,7 +70,7 @@
    <property name="geometry">
     <rect>
      <x>330</x>
-     <y>0</y>
+     <y>140</y>
      <width>60</width>
      <height>49</height>
     </rect>
@@ -78,7 +83,7 @@
    <property name="geometry">
     <rect>
      <x>410</x>
-     <y>-10</y>
+     <y>130</y>
      <width>189</width>
      <height>61</height>
     </rect>
@@ -91,7 +96,7 @@
    <property name="geometry">
     <rect>
      <x>410</x>
-     <y>50</y>
+     <y>190</y>
      <width>189</width>
      <height>61</height>
     </rect>
@@ -104,7 +109,7 @@
    <property name="geometry">
     <rect>
      <x>410</x>
-     <y>90</y>
+     <y>230</y>
      <width>189</width>
      <height>61</height>
     </rect>
@@ -117,7 +122,7 @@
    <property name="geometry">
     <rect>
      <x>410</x>
-     <y>150</y>
+     <y>280</y>
      <width>131</width>
      <height>16</height>
     </rect>
@@ -129,10 +134,10 @@
   <widget class="QTextEdit" name="tf_Informacoes">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>260</y>
-     <width>381</width>
-     <height>70</height>
+     <x>0</x>
+     <y>400</y>
+     <width>541</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="textInteractionFlags">
@@ -143,23 +148,31 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>150</y>
+     <y>290</y>
      <width>21</width>
      <height>16</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font:bold;
+font: 12pt &quot;Sans Serif&quot;;</string>
+   </property>
    <property name="text">
-    <string>1°- </string>
+    <string>1°</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbComX">
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>140</y>
+     <y>280</y>
      <width>351</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:bold;
+font: 12pt &quot;Sans Serif&quot;;</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -169,26 +182,31 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>180</y>
+     <y>320</y>
      <width>21</width>
      <height>16</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font:bold;
+font: 12pt &quot;Sans Serif&quot;;</string>
+   </property>
    <property name="text">
-    <string>2°- </string>
+    <string>2°</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbComBitParidade">
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>170</y>
+     <y>310</y>
      <width>351</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;</string>
+    <string notr="true">font:bold;
+font: 12pt &quot;Sans Serif&quot;;</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -201,13 +219,20 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>200</y>
+     <y>340</y>
      <width>361</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="maximumSize">
+    <size>
+     <width>361</width>
+     <height>31</height>
+    </size>
+   </property>
    <property name="styleSheet">
-    <string notr="true">color: red;</string>
+    <string notr="true">font:bold;
+font: 12pt &quot;Sans Serif&quot;;</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -217,20 +242,24 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>210</y>
+     <y>350</y>
      <width>21</width>
      <height>16</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font:bold;
+font: 12pt &quot;Sans Serif&quot;;</string>
+   </property>
    <property name="text">
-    <string>3°- </string>
+    <string>3° </string>
    </property>
   </widget>
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>40</y>
+     <y>180</y>
      <width>16</width>
      <height>16</height>
     </rect>
@@ -239,14 +268,14 @@
     <string notr="true">background: rgb(255, 0, 0);</string>
    </property>
    <property name="text">
-    <string> </string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>70</y>
+     <y>210</y>
      <width>16</width>
      <height>16</height>
     </rect>
@@ -255,14 +284,14 @@
     <string notr="true">background: rgb(0, 0, 0)</string>
    </property>
    <property name="text">
-    <string> </string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_13">
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>10</y>
+     <y>150</y>
      <width>16</width>
      <height>16</height>
     </rect>
@@ -271,9 +300,197 @@
     <string notr="true">background: rgb(0, 0, 255)</string>
    </property>
    <property name="text">
-    <string> </string>
+    <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>250</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 255);
+font:bold;</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>280</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 255);
+font:bold;</string>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>90</y>
+     <width>151</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../../Pictures/teste/dog.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>0</y>
+     <width>271</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../../Pictures/teste/Brushe-balao-de-fala-pfs.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_18">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>30</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Aqui calcularemos</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_19">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>50</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>O bit errado com o </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_20">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>70</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>famoso codigo de </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_21">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>90</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Hamming</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_22">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>380</y>
+     <width>21</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:bold;
+font: 12pt &quot;Sans Serif&quot;;</string>
+   </property>
+   <property name="text">
+    <string>4° </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbStrOpc4">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>370</y>
+     <width>361</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>361</width>
+     <height>31</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:bold;
+font: 12pt &quot;Sans Serif&quot;;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <zorder>horizontalLayoutWidget</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_6</zorder>
+  <zorder>label_7</zorder>
+  <zorder>label_3</zorder>
+  <zorder>tf_Informacoes</zorder>
+  <zorder>label_8</zorder>
+  <zorder>lbComX</zorder>
+  <zorder>label_9</zorder>
+  <zorder>lbComBitParidade</zorder>
+  <zorder>lbStrBitErrado</zorder>
+  <zorder>label_10</zorder>
+  <zorder>label_11</zorder>
+  <zorder>label_12</zorder>
+  <zorder>label_13</zorder>
+  <zorder>lb_Bits_Dados</zorder>
+  <zorder>label_14</zorder>
+  <zorder>label_15</zorder>
+  <zorder>label_16</zorder>
+  <zorder>label_17</zorder>
+  <zorder>lb_Bits_Dados</zorder>
+  <zorder>label</zorder>
+  <zorder>label_18</zorder>
+  <zorder>label_19</zorder>
+  <zorder>label_20</zorder>
+  <zorder>label_21</zorder>
+  <zorder>label_22</zorder>
+  <zorder>lbStrOpc4</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -8,12 +8,6 @@ Hamming::Hamming()
     this->soma = 0;
 }
 
-
-/**
- * @brief potencia_De_Dois
- * @param num
- * @return true - se o num for potencia de dois, false caso não seja.
- */
 bool Hamming::potencia_De_Dois(int n)
 {
     if (n == 1) return true;
@@ -33,11 +27,10 @@ bool Hamming::potencia_De_Dois(int n)
  * @name insere_Bit_Paridade
  * @brief
  */
-void Hamming::  insere_Bit_Paridade()
+void Hamming::insere_Bit_Paridade()
 {
     m_Bit_Dados = lista_Bits_Dados.size();
 
-    int tam = lista_Bits_Dados.size();
     for (int i = 1; i <=  lista_Bits_Dados.size(); i++)
     {
         if(potencia_De_Dois(i))
@@ -58,31 +51,17 @@ void Hamming::  insere_Bit_Paridade()
 
 }
 
-/**
- * @brief calcula_Bit_Errado
- * @param bit
- */
 void Hamming::calcula_Bit_Errado()
 {
     this->soma = 0;
     std::vector <int> bits_Errados;
     int acumulador_Bits = 0;
 
-    /*Verifica a quantidade de potencias de dois */
-    /*for (int i = m_Bit_Dados; i > 0; i--)
-    {
-        if (potencia_De_Dois(i))
-            n++;
-    }*/
-
     /* Percorre a lista, se achou um bit com indice potencia de dois
      * faz um novo laço que anda j casas e pula j casas, e soma os
      * bits com valor 1.
      */
     int tam = lista_Bits_Dados.size();
-    /*for (int i = 0; i < lista_Bits_Dados.size(); i++){
-        lista_Bits_Dados.push_back(0);
-    }*/
 
     bool flag, flag2;
     for (int i = 1; i < tam; i++)
@@ -99,13 +78,11 @@ void Hamming::calcula_Bit_Errado()
                 if (flag)
                 {
                     int i1 = i;
+                    /*tratamento para nao passar do tamanho maximo da lista*/
                     if(j + i > lista_Bits_Dados.size()) i1 = lista_Bits_Dados.size() - j;
                     qDebug() << "\n";
                     for (int k = 0; k < i1; k++)
                     {
-                        //if (flag)
-                        //{
-                        //if ((j + k) > tam) break;
                         if(flag2)
                         {
                             if (lista_Bits_Dados.at(j+k) == 1)
@@ -114,11 +91,7 @@ void Hamming::calcula_Bit_Errado()
                             qDebug() << lista_Bits_Dados.at(j+k);
                         }
                         else
-                        {
                             flag2 = !flag2;
-                        }
-                        //}
-                        //flag = !flag;
                     }
 
                 }
@@ -138,36 +111,11 @@ void Hamming::calcula_Bit_Errado()
     for (auto n: bits_Errados)
         qDebug() << n;
 
-    /*TESTES*/
-    //int soma = 0;
+    /*Soma os bits errados*/
     for (int i = 0; i < bits_Errados.size(); i++){
         this->soma += bits_Errados[i];
     }
 
     qDebug() << soma;
-}
-
-
-/*Getters*/
-int Hamming::get_Bit_Dados() const
-{
-    return m_Bit_Dados;
-
-}
-
-int Hamming::get_Bit_Paridade() const
-{
-    return m_Bit_Paridade;
-}
-
-/*Setters*/
-void Hamming::set_Bit_Dados(int bit_Dados) const
-{
-    Hamming::instancia()->m_Bit_Dados = bit_Dados;
-}
-
-void Hamming::set_Bit_Paridade(int bit_Paridade) const
-{
-    Hamming::instancia()->m_Bit_Paridade = bit_Paridade;
 }
 

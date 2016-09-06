@@ -22,9 +22,10 @@ public:
         return s_Instancia;
     }
     std::vector<int> bit_Dados;
-    bool conta_Numero_Paridade();
+    void conta_Numero_Paridade();
 
     int acumulador_Bits;
+    bool correto;
 
     QString bit_Paridade;
     QString bit_Paridade_Correto;

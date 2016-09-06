@@ -30,7 +30,7 @@ void MainWindow::on_btOk_clicked()
     Hamming::instancia()->fila_Bits_Paridade.clear();
 
     /*Verifica se a caixa de texto está vazia.*/
-    if(ui->tfBit->text() == NULL || ui->tfBitParidade->text() == NULL)
+    if(ui->tfBit->text() == NULL/* || ui->tfBitParidade->text() == NULL*/)
     {
 
         ErrorForm *err = new ErrorForm();
@@ -102,6 +102,9 @@ void MainWindow::on_btOk_clicked()
                     Hamming::instancia()->fila_Bits_Paridade.begin(), bit);
     }
 
+    //pega os valores para mandar para a janela nos labels
+    Hamming::instancia()->bits_Originais = ui->tfBit->text();
+    Hamming::instancia()->paridade_Originais = ui->tfBitParidade->text();
     if(erro)
     {
         ErrorForm *err = new ErrorForm();
@@ -135,7 +138,8 @@ void MainWindow::on_btOk_clicked()
    //Paridade::instancia()->bit_Paridade = Hamming::instancia()->fila_Bits_Paridade;
 
     /*Verifica se o tamanho do bit de paridade é maior do que devia.*/
-    if(ui->rbHamm->isChecked() && Hamming::instancia()->fila_Bits_Paridade.size() <= cont -1)
+    int tam1 = Hamming::instancia()->fila_Bits_Paridade.size();
+    if(ui->rbHamm->isChecked() && (ui->tfBitParidade->text().size() < cont + 1) || (ui->tfBitParidade->text().size() > cont + 1))
     {
         ErrorForm *err = new ErrorForm();
         err->setVisible(true);

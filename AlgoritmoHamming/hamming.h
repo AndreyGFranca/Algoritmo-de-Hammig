@@ -28,9 +28,12 @@ public:
         return s_Instancia;
     }
 
+
     std::vector<int>    lista_Bits_Dados;
     std::vector<int>    fila_Bits_Paridade;
     QString             copia_Lista;
+    QString             bits_Originais;
+    QString             paridade_Originais;
 
     int soma;
 
@@ -39,15 +42,6 @@ public:
     bool potencia_De_Dois(int num);
     void insere_Bit_Paridade();
     void calcula_Bit_Errado();
-
-    /*Getters*/
-    int get_Bit_Dados() const;
-    int get_Bit_Paridade() const;
-
-    /*Setters*/
-    void set_Bit_Dados(int bit_Dados) const;
-    void set_Bit_Paridade(int bit_Paridade) const;
-
 };
 
 //typedef Hamming OHamming;

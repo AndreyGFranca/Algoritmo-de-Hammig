@@ -6,8 +6,10 @@ Paridade::Paridade()
 {
 }
 
-bool Paridade::conta_Numero_Paridade()
+void Paridade::conta_Numero_Paridade()
 {
+    bit_Paridade_Correto.clear();
+
     acumulador_Bits = 0;
     for (int i = 0; i < bit_Dados.size(); i++){
         if(bit_Dados.at(i) == 1)
@@ -17,14 +19,15 @@ bool Paridade::conta_Numero_Paridade()
     if (acumulador_Bits % 2 == 0 && bit_Paridade.at(0) == '0')
     {
         bit_Paridade_Correto.append('0');
-        return true;
+        correto = true;
     }
     else if (acumulador_Bits % 2 != 0 && bit_Paridade.at(0) == '1')
     {
         bit_Paridade_Correto.append('1');
-        return true;
+        correto = true;
     }
-
-    return false;
+    else{
+        correto = false;
+    }
 
 }

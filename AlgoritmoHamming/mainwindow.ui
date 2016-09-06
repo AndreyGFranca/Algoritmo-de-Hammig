@@ -6,18 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>564</width>
-    <height>350</height>
+    <width>573</width>
+    <height>410</height>
    </rect>
   </property>
-  <property name="maximumSize">
-   <size>
-    <width>564</width>
-    <height>350</height>
-   </size>
-  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Aprendendo Arquitetura de Computadores com o Fred!</string>
   </property>
   <property name="whatsThis">
    <string/>
@@ -26,20 +20,16 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>70</y>
+      <x>10</x>
+      <y>240</y>
       <width>361</width>
-      <height>141</height>
+      <height>102</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Informe os bits de qualquer tamanho</string>
-       </property>
-      </widget>
-     </item>
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
      <item>
       <widget class="QLineEdit" name="tfBit"/>
      </item>
@@ -52,6 +42,9 @@
      </item>
      <item>
       <widget class="QRadioButton" name="rbCodBitPar">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>Código de Paridade com bit de paridade</string>
        </property>
@@ -69,10 +62,10 @@
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>220</y>
-      <width>391</width>
-      <height>80</height>
+      <x>60</x>
+      <y>350</y>
+      <width>443</width>
+      <height>41</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -95,8 +88,8 @@
    <widget class="QLabel" name="lbLateral">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>80</y>
+      <x>370</x>
+      <y>220</y>
       <width>201</width>
       <height>16</height>
      </rect>
@@ -108,13 +101,137 @@
    <widget class="QLineEdit" name="tfBitParidade">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>110</y>
+      <x>370</x>
+      <y>240</y>
       <width>113</width>
       <height>22</height>
      </rect>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>261</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Informe um bit de qualquer tamanho:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>111</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../Pictures/teste/dog.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>0</y>
+      <width>311</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../Pictures/teste/Brushe-balao-de-fala-pfs.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>30</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Olá, eu sou o Fred</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>50</y>
+      <width>161</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Vou te ensinar algumas</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>70</y>
+      <width>161</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>coisas bem legais, sobre</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>90</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Arquitetura de </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>100</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Computadores</string>
+    </property>
+   </widget>
+   <zorder>verticalLayoutWidget</zorder>
+   <zorder>horizontalLayoutWidget</zorder>
+   <zorder>lbLateral</zorder>
+   <zorder>tfBitParidade</zorder>
+   <zorder>rbCodParidade</zorder>
+   <zorder>tfBit</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label_8</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>

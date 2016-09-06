@@ -2,6 +2,7 @@
 #define PARIDADESIMPLES_H
 
 #include <vector>
+#include <QString>
 
 class ParidadeSimples
 {
@@ -21,6 +22,8 @@ public:
         return s_Instancia;
     }
     std::vector<int> bit_Dados;
+
+    QString bit;
 
     int acumulador_Bits;
 

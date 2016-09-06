@@ -6,29 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>557</width>
-    <height>340</height>
+    <width>556</width>
+    <height>369</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Paridade com bit paridade</string>
   </property>
-  <widget class="QLabel" name="label_11">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>40</y>
-     <width>16</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background: rgb(255, 0, 0);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
@@ -38,6 +22,9 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;font: 10pt &amp;quot;Sans Serif&amp;quot;;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
    <property name="text">
     <string>Resposta Correta:</string>
    </property>
@@ -46,10 +33,13 @@
    <property name="geometry">
     <rect>
      <x>140</x>
-     <y>160</y>
+     <y>180</y>
      <width>391</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Sans Serif&quot;;</string>
    </property>
    <property name="text">
     <string>lbBitsDados</string>
@@ -59,7 +49,7 @@
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>130</y>
+     <y>110</y>
      <width>131</width>
      <height>16</height>
     </rect>
@@ -71,8 +61,8 @@
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>70</y>
+     <x>350</x>
+     <y>50</y>
      <width>16</width>
      <height>16</height>
     </rect>
@@ -97,19 +87,6 @@
     <string>Legenda:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>350</x>
-     <y>20</y>
-     <width>189</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Bit Errado</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="lbRespostaCorreta">
    <property name="geometry">
     <rect>
@@ -119,6 +96,9 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Sans Serif&quot;;</string>
+   </property>
    <property name="text">
     <string>lbRespostaCorreta</string>
    </property>
@@ -126,8 +106,8 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>-10</y>
+     <x>370</x>
+     <y>0</y>
      <width>189</width>
      <height>61</height>
     </rect>
@@ -139,8 +119,8 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>50</y>
+     <x>370</x>
+     <y>30</y>
      <width>189</width>
      <height>61</height>
     </rect>
@@ -153,10 +133,13 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>160</y>
+     <y>180</y>
      <width>111</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 10pt &quot;Sans Serif&quot;;</string>
    </property>
    <property name="text">
     <string>Bits Informados:</string>
@@ -166,7 +149,7 @@
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>90</y>
+     <y>70</y>
      <width>189</width>
      <height>61</height>
     </rect>
@@ -178,8 +161,8 @@
   <widget class="QLabel" name="label_13">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>10</y>
+     <x>350</x>
+     <y>20</y>
      <width>16</width>
      <height>16</height>
     </rect>
@@ -191,44 +174,11 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="lbNum">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>140</y>
-     <width>59</width>
-     <height>14</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color:blue;
-</string>
-   </property>
-   <property name="text">
-    <string>lnNum</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbNum_2">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>190</y>
-     <width>59</width>
-     <height>14</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color:blue;</string>
-   </property>
-   <property name="text">
-    <string>lnNum</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
      <x>330</x>
-     <y>110</y>
+     <y>90</y>
      <width>16</width>
      <height>16</height>
     </rect>
@@ -245,7 +195,7 @@
    <property name="geometry">
     <rect>
      <x>330</x>
-     <y>130</y>
+     <y>110</y>
      <width>16</width>
      <height>16</height>
     </rect>
@@ -261,14 +211,136 @@
   <widget class="QTextEdit" name="tf_Informacoes">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>250</y>
+     <x>10</x>
+     <y>270</y>
      <width>501</width>
-     <height>70</height>
+     <height>81</height>
     </rect>
    </property>
    <property name="textInteractionFlags">
     <set>Qt::NoTextInteraction</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbMovie">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>60</y>
+     <width>121</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../../Pictures/teste/dog.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>0</y>
+     <width>181</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../../Pictures/teste/265-128.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>30</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>     Aqui vamos</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>50</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Verificar se o bit</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>70</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>de paridade está</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>90</y>
+     <width>59</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>correto!</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>240</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: italic 12pt &quot;Sans Serif&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Explicação:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_18">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>130</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: italic 12pt &quot;Sans Serif&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Explicação:</string>
    </property>
   </widget>
  </widget>
