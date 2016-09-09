@@ -135,17 +135,6 @@ void MainWindow::on_btOk_clicked()
    Paridade::instancia()->bit_Dados = Hamming::instancia()->lista_Bits_Dados;
    ParidadeSimples::instancia()->bit_Dados = Hamming::instancia()->lista_Bits_Dados;
 
-   //Paridade::instancia()->bit_Paridade = Hamming::instancia()->fila_Bits_Paridade;
-
-    /*Verifica se o tamanho do bit de paridade é maior do que devia.*/
-    int tam1 = Hamming::instancia()->fila_Bits_Paridade.size();
-    /*if(ui->rbHamm->isChecked() && (ui->tfBitParidade->text().size() < cont + 1) || (ui->tfBitParidade->text().size() > cont + 1))
-    {
-        ErrorForm *err = new ErrorForm();
-        err->setVisible(true);
-        erro = !erro;
-    }*/
-
     if(!erro)
     {
         if(ui->rbHamm->isChecked())
